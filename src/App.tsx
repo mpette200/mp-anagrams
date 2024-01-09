@@ -1,10 +1,12 @@
+import InputForm from './InputForm';
 import PageBound from './PageBound';
 import TopBanner from './TopBanner';
 
 function App() {
   return (
       <PageBound>
-        <TopBanner><h1>Welcome</h1></TopBanner>
+        <TopBanner><h1>Here You Can Search For Anagrams</h1></TopBanner>
+        <InputForm />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
           labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum sed arcu non odio.
