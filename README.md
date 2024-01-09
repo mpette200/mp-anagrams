@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Anagram Generator
+Demo project using Rust and WebAssembly (WASM) to show potential performance
+gains due to WASM.
+
+ - TODO: Setup React frontend UI
+ - TODO: Setup Rust project for WASM
+ - TODO: Integrate WASM into frontend
+ - TODO: Algorithm for searching for anagrams
+
+# Notes From Create React App
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
