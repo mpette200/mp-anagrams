@@ -1,39 +1,28 @@
 import InputForm from './InputForm';
+import OutputBox from './OutputBox';
 import PageBound from './PageBound';
 import TopBanner from './TopBanner';
+import { useState } from 'react';
+import { PressEvent } from 'react-aria-components';
+
 
 function App() {
+  const [wasmRunning, setWasmRunning] = useState(false);
+  const [scriptRunning, setScriptRunning] = useState(false);
+
+  const handleWasm = (e: PressEvent) => {
+    setWasmRunning(!wasmRunning);
+  };
+
+  const handleScript = (e: PressEvent) => {
+    setScriptRunning(!scriptRunning);
+  };
+
   return (
       <PageBound>
         <TopBanner><h1>Here You Can Search For Anagrams</h1></TopBanner>
-        <InputForm />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum sed arcu non odio.
-          Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis. Amet mauris
-          commodo quis imperdiet massa tincidunt nunc. Nec dui nunc mattis enim ut tellus elementum
-          sagittis vitae. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros.
-          Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Et netus et malesuada
-          fames ac turpis egestas integer. Purus in massa tempor nec feugiat nisl pretium.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum sed arcu non odio.
-          Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis. Amet mauris
-          commodo quis imperdiet massa tincidunt nunc. Nec dui nunc mattis enim ut tellus elementum
-          sagittis vitae. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros.
-          Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Et netus et malesuada
-          fames ac turpis egestas integer. Purus in massa tempor nec feugiat nisl pretium.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum sed arcu non odio.
-          Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis. Amet mauris
-          commodo quis imperdiet massa tincidunt nunc. Nec dui nunc mattis enim ut tellus elementum
-          sagittis vitae. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros.
-          Nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Et netus et malesuada
-          fames ac turpis egestas integer. Purus in massa tempor nec feugiat nisl pretium.
-        </p>
+        <InputForm wasmHandler={handleWasm} scriptHandler={handleScript}/>
+        <OutputBox wasmRunning={wasmRunning} scriptRunning={scriptRunning} />
       </PageBound>
   );
 }

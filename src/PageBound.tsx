@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     min-width: 180px;
     display: flex;
     justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 `;
 
 const FlexWidth = styled.div`
