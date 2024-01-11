@@ -23,6 +23,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: npm
+        env:
+          PUBLIC_URL: mp-anagrams
       - run: npm install
       - run: npm run build
 
